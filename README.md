@@ -1,37 +1,66 @@
-# BarricAid 🚧
+# 🚧 BarricAid – Real-Time Barricade Detection & Alert System
 
-A real-time barricade detection app built with Flutter & Flask. Designed to alert drivers about nearby roadblocks using ML, maps, and location services.
+BarricAid is an intelligent Flutter-based mobile application that detects road barricades and alerts users in real time, ensuring safer and more informed driving experiences. It integrates on-device location tracking, machine learning–powered barricade detection, and real-time push alerts.
 
-## Features
-- 🔍 Real-time barricade detection using YOLOv11.
-- 🗺️ Live map with socket-based pin updates.
-- 📸 Upload photos from camera/gallery for detection.
-- 🚨 Alerts users with sound + notifications within 100m of barricades.
-- 📡 Background location tracking.
-- 🔄 Developer/User mode switch.
+## 📱 Features
 
-## Tech Stack
-- **Flutter** (Frontend)S
-- **Flask** + **YOLOv11** (Backend & ML)
-- **Socket.IO** (Real-time updates)
-- **Geopy** (Address generation)
+- Real-time GPS tracking
+- Upload images to detect barricades using YOLOv11
+- Live barricade map view
+- Background location monitoring
+- Notifications, vibration, and audio alerts when near barricades
+- Developer view with image upload and pin management
+- Admin API integration and local Flask server
 
-## Cloud Infrastructure
+## 🧠 Machine Learning Backend (YOLOv11)
 
-The backend Flask server is hosted on an **Amazon EC2 instance**, providing a scalable and reliable environment for the API that processes document uploads and serves data to the Flutter app.
+The app uses a custom-trained **YOLOv11** object detection model to identify barricades from images uploaded via the app. Detected barricades are then geotagged and shared across devices.
 
-## 📱 Screenshots
+## 🔧 Flask Backend & AWS Integration
 
-<p float="left">
-  <img src="assets/screenshots/BarricAid.jpg" width="200"/>
-  <img src="assets/screenshots/BarricAid2.jpg" width="200"/>
-  <img src="assets/screenshots/BarricAid3.jpg" width="200"/>
-  <img src="assets/screenshots/BarricadeGIF.gif" width="200"/>
+A dedicated **Flask server** handles backend operations and is hosted on an **AWS EC2 instance**.
+
+### Key Components:
+- `Flask` for image handling and prediction routing
+- `Flask-SocketIO` for broadcasting real-time barricade pin data
+- `geopy` for reverse geocoding GPS coordinates into street names
+- Hosted on **AWS EC2 (Ubuntu)** with port forwarding for public access
+
+### Architecture:
+
+
+### Flask Backend Files:
+Folder: `/flask_backend/`
+- `app.py`: Main Flask server logic
+- `model.pt`: YOLOv11 barricade detection model
+- `requirements.txt`: Backend dependencies
+- `barricades.json`: Stores pin data
+
+---
+
+## 🖼️ Screenshots
+
+<p align="center">
+  <img src="assets/screenshots/BarricAid.jpg" width="200" />
+  <img src="assets/screenshots/BarricAid2.jpg" width="200" />
+  <img src="assets/screenshots/BarricAid3.jpg" width="200" />
 </p>
 
+### 🎞️ Demo
+<p align="center">
+  <img src="assets/screenshots/BarricadeGIF.gif" width="200" />
+</p>
+
+---
+
+## 🧪 Tech Stack
+
+- Flutter (Frontend)
+- Flask (Backend)
+- YOLOv11 (Barricade Detection)
+- Socket.IO (Real-Time Communication)
+- AWS EC2 (Deployment)
+- SQLite (Local Storage)
+- geopy (Reverse Geocoding)
 
 
-## Getting Started
-Clone the repo:
-```bash
-git clone https://github.com/faiz3544/BarricAid.git
