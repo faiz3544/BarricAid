@@ -1,0 +1,38 @@
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        // Android Gradle Plugin version (adjust this to the one compatible with your Flutter version)
+        classpath 'com.android.tools.build:gradle:8.0.2'  // Updated for compatibility with Flutter's required plugin
+
+        // No need to manually include the flutter-gradle-plugin
+        classpath 'com.google.gms:google-services:4.3.14' // Optional, if you're using Firebase or Google services
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+rootProject.buildDir = "../build"
+subprojects {
+    project.buildDir = "${rootProject.buildDir}/${project.name}"
+}
+subprojects {
+    project.evaluationDependsOn(":app")
+}
+
+tasks.register("clean", Delete) {
+    delete rootProject.buildDir
+}
+
+ext {
+    compileSdkVersion = 35  // Updated to match your `build.gradle` in the app module
+    targetSdkVersion = 35  // Updated to match your `build.gradle` in the app module
+    minSdkVersion = 21
+}
