@@ -1,16 +1,41 @@
-# capstone
+# BarricAid 🚧
 
-A new Flutter project.
+A real-time barricade detection app built with Flutter & Flask. Designed to alert drivers about nearby roadblocks using ML, maps, and location services.
+
+## Features
+- 🔍 Real-time barricade detection using YOLOv11.
+- 🗺️ Live map with socket-based pin updates.
+- 📸 Upload photos from camera/gallery for detection.
+- 🚨 Alerts users with sound + notifications within 100m of barricades.
+- 📡 Background location tracking.
+- 🔄 Developer/User mode switch.
+
+## Tech Stack
+- **Flutter** (Frontend)S
+- **Flask** + **YOLOv11** (Backend & ML)
+- **Socket.IO** (Real-time updates)
+- **Geopy** (Address generation)
+
+## Cloud Infrastructure
+
+The backend Flask server is hosted on an **Amazon EC2 instance**, providing a scalable and reliable environment for the API that processes document uploads and serves data to the Flutter app.
+
+## 📱 Screenshots
+
+### Home Screen
+![Home](assets/screenshots/BarricAid2.jpg)
+
+### Detection in Action
+![Detect](assets/screenshots/BarricAid.jpg)
+
+### Notification Example
+![Notification](assets/screenshots/BarricAid3.jpg)
+
+### 🎞️ Demo
+![Demo GIF](assets/screenshots/BarricadeGIF.gif)
+
 
 ## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Clone the repo:
+```bash
+git clone https://github.com/faiz3544/BarricAid.git
