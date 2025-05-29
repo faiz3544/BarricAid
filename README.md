@@ -27,7 +27,7 @@ The backend Flask server is hosted on an **Amazon EC2 instance**, providing a sc
   <img src="assets/screenshots/BarricAid2.jpg" width="250"/>
   <img src="assets/screenshots/BarricAid3.jpg" width="250"/>
 </p>
-<img src="assets/screenshots/BarricadeGIF.gif" width="400"/>
+<img src="assets/screenshots/BarricadeGIF.gif" width="250"/>
 
 
 ## Getting Started
