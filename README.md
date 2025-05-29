@@ -22,17 +22,12 @@ The backend Flask server is hosted on an **Amazon EC2 instance**, providing a sc
 
 ## 📱 Screenshots
 
-### Home Screen
-![Home](assets/screenshots/BarricAid2.jpg)
-
-### Detection in Action
-![Detect](assets/screenshots/BarricAid.jpg)
-
-### Notification Example
-![Notification](assets/screenshots/BarricAid3.jpg)
-
-### 🎞️ Demo
-![Demo GIF](assets/screenshots/BarricadeGIF.gif)
+<p float="left">
+  <img src="assets/screenshots/BarricAid.jpg" width="250"/>
+  <img src="assets/screenshots/BarricAid2.jpg" width="250"/>
+  <img src="assets/screenshots/BarricAid3.jpg" width="250"/>
+</p>
+<img src="assets/screenshots/BarricadeGIF.gif" width="400"/>
 
 
 ## Getting Started
