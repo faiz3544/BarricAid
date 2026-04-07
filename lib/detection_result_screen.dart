@@ -20,7 +20,7 @@ class DetectionResultScreen extends StatelessWidget {
             Image.file(image),
             SizedBox(height: 20),
             Text(
-              detected ? '🚧 Barricade Detected!' : '✅ No Barricade Found',
+              detected ? 'Barricade Detected!' : 'No Barricade Found',
               style: TextStyle(
                 fontSize: 22,
                 fontWeight: FontWeight.bold,
