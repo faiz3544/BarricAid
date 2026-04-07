@@ -12,10 +12,10 @@ socketio = SocketIO(app, cors_allowed_origins="*")
 
 barricades = []
 
-# Load YOLOv11 model
-model = YOLO('best.pt')  # Update if needed
 
-# Setup reverse geocoding
+model = YOLO('best.pt')  
+
+
 geolocator = Nominatim(user_agent="barricade-detector")
 
 def get_address(latitude, longitude):
@@ -26,7 +26,7 @@ def get_address(latitude, longitude):
         print("Geocoding error:", e)
         return "Unknown Address"
 
-# Run inference
+
 def run_inference(image_bytes):
     img = Image.open(io.BytesIO(image_bytes)).convert("RGB")
     results = model.predict(img, imgsz=640, conf=0.5)
@@ -45,7 +45,7 @@ def run_inference(image_bytes):
             })
     return predictions
 
-# Routes
+
 @app.route('/barricades', methods=['GET'])
 def get_barricades():
     return jsonify(barricades)
@@ -53,7 +53,7 @@ def get_barricades():
 @app.route('/barricades', methods=['POST'])
 def add_barricade():
     try:
-        # Handle both form-data and raw JSON
+        
         if request.is_json:
             data = request.get_json()
             latitude = float(data.get('latitude'))
